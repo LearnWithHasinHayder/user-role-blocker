@@ -2,29 +2,23 @@
 /*
 Plugin Name: User Role Blocker
 Plugin URI:
-Description: Block User By Role
+Description: A simple and nice plugin to block existing users from logging into the admin panel by assigning them to 'Blocked' user role, as simple as that. 
 Version: 1.0.0
-Author: LWHH
-Author URI:
+Author: Captain Haddock
+Author URI: mailto:captainhaddock@leevio.com
 License: GPLv2 or later
-Text Domain: urb
+Text Domain: user-role-blocker
  */
 add_action( 'init', function () {
-    add_role( 'urb_user_blocked', __( 'Blocked', 'urb' ), array('blocked' => true) );
+    add_role( 'urb_user_blocked', __( 'Blocked', 'user-role-blocker' ), array('blocked' => true) );
     add_rewrite_rule('blocked/?$','index.php?blocked=1','top');
 } );
 
 add_action('init',function(){
-    //$user = wp_get_current_user();
-    //if($user->has_cap('blocked'));
-
     if(is_admin() && current_user_can('blocked')){
         wp_redirect(get_home_url().'/blocked');
         die();
-    }elseif(current_user_can('blocked')){
-        //show_admin_bar(false);
     }
-
 });
 
 add_filter('query_vars',function($query_vars){
@@ -41,10 +35,10 @@ add_action('template_redirect',function(){
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Blocked</title>
+            <title><?php _e('Blocked User','user-role-blocker') ;?></title>
         </head>
         <body>
-            <h2><?php _e('You are blocked','urb')  ;?></h2>
+            <h2 style="text-align: center"><?php _e('You are blocked','user-role-blocker')  ;?></h2>
         </body>
         </html>
         <?php
