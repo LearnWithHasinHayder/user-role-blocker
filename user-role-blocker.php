@@ -5,7 +5,7 @@ Plugin URI: https://github.com/LearnWithHasinHayder/user-role-blocker
 Description: A simple and nice plugin to block existing users from logging into the admin panel by assigning them to the 'Blocked' user role, as simple as that.
 Version: 1.0.0
 Author: Captain Haddock
-Author URI: mailto:captainhaddock@leevio.com
+Author URI: https://profiles.wordpress.org/captainhaddock/
 License: GPLv2 or later
 Text Domain: user-role-blocker
  */

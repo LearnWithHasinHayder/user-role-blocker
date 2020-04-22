@@ -17,3 +17,8 @@ Unblocking a user is easy. Assign them to their previous role and you're done!
 
 == Installation ==
 Installation is fairly straight forward. Install it from the WordPress plugin repository. 
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial Release 
